@@ -11,13 +11,13 @@ LightSensor::LightSensor() {
  */
 int LightSensor::GetBrightness() {
     // Raw analog value from 0-4095 (lower means higher light level)
-    lightLevel = analogRead(PIN);
+    mLightLevel = analogRead(mPIN);
 
     // Convert to percentage (0-100)
     // Values below minVal are considered 100% light, above maxVal are 0% light
     int minVal = 30;
     int maxVal = 400;
-    int lightPercent = 100 - ((lightLevel - minVal) * 100 / (maxVal - minVal));
+    int lightPercent = 100 - ((mLightLevel - minVal) * 100 / (maxVal - minVal));
 
     // clamp to 0-100
     if (lightPercent < 0) lightPercent = 0;

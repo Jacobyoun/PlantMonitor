@@ -11,9 +11,9 @@
  */
 class MoistureSensor {
 private:
-    uint8_t PIN = A1;      // Pin the sensor is connected to
-    const int baud = 9600; // Baud rate for serial communication
-    int moistureLevel = 0; // Variable to hold the moisture level
+    uint8_t mPIN = A1;      // Pin the sensor is connected to
+    const int mBaud = 9600; // Baud rate for serial communication
+    int mMoistureLevel = 0; // Variable to hold the moisture level
 
 public:
     MoistureSensor();      // Constructor to initialize the sensor

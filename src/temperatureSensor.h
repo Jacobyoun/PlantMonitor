@@ -7,12 +7,12 @@
 class TemperatureSensor {
     private:
 
-        uint8_t PIN = D3;               // Contains the pin the sensor is connected to
-        byte dataArray[5] = {0x00};          // Array to hold the 5 bytes of data from the sensor
-        float humidity = 0.0f;          // Variable to hold the humidity value
-        float temp = 0.0f;              // Variable to hold the temperature value
-        float prevTemp;                 // Variable to hold the previous temperature value
-        float prevHumidity;             // Variable to hold the previous humidity value
+        uint8_t mPIN = D3;               // Contains the pin the sensor is connected to
+        byte mDataArray[5] = {0x00};          // Array to hold the 5 bytes of data from the sensor
+        float mHumidity = 0.0f;          // Variable to hold the humidity value
+        float mTemp = 0.0f;              // Variable to hold the temperature value
+        float mPrevTemp;                 // Variable to hold the previous temperature value
+        float mPrevHumidity;             // Variable to hold the previous humidity value
         bool TemperatureSensorRead();   // Function to read the sensor and update temp and humidity
 
     public:

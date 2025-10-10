@@ -3,9 +3,9 @@
 
 class LightSensor {
 private:
-    uint8_t PIN = A5;
-    const int baud = 9600;
-    int lightLevel = 0;
+    uint8_t mPIN = A5;
+    const int Baud = 9600;
+    int mLightLevel = 0;
 
 public:
     LightSensor();

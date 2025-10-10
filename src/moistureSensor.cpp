@@ -24,7 +24,7 @@ float MoistureSensor::GetMoisture() {
     const int dif = dry - wet;
 
     // read raw value
-    int raw = analogRead(PIN);
+    int raw = analogRead(mPIN);
 
     // map raw to a percentage
     float percent = 100.0f * (dry - raw) / dif;
