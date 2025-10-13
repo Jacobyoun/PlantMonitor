@@ -19,8 +19,8 @@ MoistureSensor::MoistureSensor() {
  * Function to get moisture level and print to the serial log
  */
 float MoistureSensor::GetMoisture() {
-    const int dry = 2200;   // Dry value when put in very dry soil, adjust based on your calibration
-    const int wet = 600;    // Wet value when put in highly saturated soil, adjust based on your calibration
+    const int dry = 2400;   // Dry value when put in very dry soil, adjust based on your calibration
+    const int wet = 800;    // Wet value when put in highly saturated soil, adjust based on your calibration
     const int dif = dry - wet;
 
     // read raw value
@@ -34,3 +34,4 @@ float MoistureSensor::GetMoisture() {
     // Return the percentage
     return percent;
 }
+

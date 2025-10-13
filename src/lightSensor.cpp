@@ -16,7 +16,7 @@ int LightSensor::GetBrightness() {
     // Convert to percentage (0-100)
     // Values below minVal are considered 100% light, above maxVal are 0% light
     int minVal = 30;
-    int maxVal = 400;
+    int maxVal = 800;// Used to be 400
     int lightPercent = 100 - ((mLightLevel - minVal) * 100 / (maxVal - minVal));
 
     // clamp to 0-100

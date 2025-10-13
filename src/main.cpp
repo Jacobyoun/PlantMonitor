@@ -28,9 +28,9 @@ void loop() {
     for (int i = 0; i < 15; i++) { 
         soil_moisture_levels[i] = moistureSensor.GetMoisture();
         light_levels[i] = lightSensor.GetBrightness();
-        delay(58500); // Wait slightly less than a minute to account for execution time
+        delay(59000); // Wait slightly less than a minute to account for execution time
     }
-    float averageLightLevel = 0;
+    int averageLightLevel = 0;
     float averageMoisture = 0;
     for (int level : light_levels) {
         averageLightLevel += level;
@@ -38,7 +38,7 @@ void loop() {
     for (float moisture : soil_moisture_levels) {
         averageMoisture += moisture;
     }
-    averageLightLevel /= 15.0f;
+    averageLightLevel /= 15;
     averageMoisture /= 15.0f;
 
     // Get temperature and humidity
@@ -49,7 +49,7 @@ void loop() {
     char jsonData[128];
     snprintf(jsonData, sizeof(jsonData), 
              "{\"tempC\":%.1f,\"tempF\":%.1f,\"humidity\":%.1f,\"light\":%d,\"moisture\":%.1f}", 
-             temp_humidity.at(0), fahrenheit, temp_humidity.at(1), averageLightLevel, averageMoisture);
+             temp_humidity.at(0), fahrenheit, temp_humidity.at(1), averageLightLevel, averageMoisture   );
     // After collecting light readings and other sensor data
 
     // Get current minute and second
@@ -72,3 +72,5 @@ void loop() {
     Particle.publish("sensorData", jsonData, PRIVATE);
     Serial.println(jsonData);
 }
+
+
