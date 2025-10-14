@@ -14,7 +14,10 @@ The data collected by the hardware is sent to the particle cloud as a JSON strin
 personal website project. It is then displayed at https://www.jacobyoungerman.com/plantmonitor.
 
 # Project Hardware:
-Particle Argon Kit: https://docs.particle.io/argon/ \n
-Temp Sensor: https://www.amazon.com/dp/B073F472JL?ref=ppx_yo2ov_dt_b_fed_asin_title \n
+
+Particle Argon Kit: https://docs.particle.io/argon/
+
+Temp Sensor: https://www.amazon.com/dp/B073F472JL?ref=ppx_yo2ov_dt_b_fed_asin_title
+
 Soil Moisture Sensor: https://www.amazon.com/dp/B0BTHL6M19?ref=ppx_yo2ov_dt_b_fed_asin_title \n
 
