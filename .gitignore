@@ -1,0 +1,27 @@
+# Particle build outputs
+*.bin
+firmware.bin
+target/
+build/
+
+# Local config files
+.project
+.particle/
+.env
+.settings/
+*.code-workspace
+
+# VS Code workspace files
+.vscode/
+.history/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temp files
+*.tmp
+*.bak
+*.swp
