@@ -18,5 +18,5 @@ private:
 public:
     MoistureSensor();      // Constructor to initialize the sensor
     float  GetMoisture();    // Function to get moisture level and print to the serial log
-    //float GetMoistureP(); // Function to get moisture level as a percentage
+    void resetSensor();    // Function to reset the sensor
 };

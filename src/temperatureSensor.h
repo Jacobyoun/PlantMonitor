@@ -17,5 +17,6 @@ class TemperatureSensor {
 
     public:
         TemperatureSensor();     // Function to initialize the sensor (constructor)
+        void resetSensor();      // Function to reset the sensor
         std::vector<float>  GetTemperatureAndHumidity(); // Function to get temperature and humidity
 };

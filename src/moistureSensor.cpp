@@ -16,6 +16,14 @@ MoistureSensor::MoistureSensor() {
 }
 
 /**
+ * Function to reset the sensor (Need to do daily resets to prevent drift and stalling)
+ */
+void MoistureSensor::resetSensor() {
+    pinMode(mPIN, INPUT);         // configure pin
+    int dummy = analogRead(mPIN); // take a dummy reading to stabilize
+}
+
+/**
  * Function to get moisture level and print to the serial log
  */
 float MoistureSensor::GetMoisture() {

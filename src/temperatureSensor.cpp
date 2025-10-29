@@ -8,7 +8,6 @@
  */
 #include "temperatureSensor.h"
 
-
 /**
  * The setup function runs once when you press reset or power the board
  */
@@ -19,17 +18,25 @@ TemperatureSensor::TemperatureSensor() {
 }
 
 /**
+ * Function to reset the sensor (Need to do daily resets to prevent drift and stalling)
+ */
+void TemperatureSensor::resetSensor() {
+    pinMode(mPIN, INPUT_PULLUP);
+    auto dummy = GetTemperatureAndHumidity(); // Take a dummy reading to stabilize
+}
+
+/**
  * Function to get temperature and humidity and print to the serial log
  */
 std::vector<float> TemperatureSensor::GetTemperatureAndHumidity(){
     for (int i = 0; i < 3; i++) { // Try up to 3 times to get a reading
-        }
         if (TemperatureSensorRead()) {
             //Serial.printf("Temp: %.1fC/%.1fF, Humidity: %.1f%%\n", temp, humidity);
             mPrevTemp = mTemp;
             mPrevHumidity = mHumidity;
         } 
-        delay(500);
+        delay(500); // Wait 500 ms (blocking)
+    }
     return {mPrevTemp, mPrevHumidity};
 };
 
@@ -87,7 +94,6 @@ bool TemperatureSensor::TemperatureSensorRead() {
             return false;
         }
     }
-    
 
     //
     // Read 40 bits of mDataArray
